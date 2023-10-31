@@ -1,0 +1,21 @@
+#adapt *basic*
+
+f type BOOL as IsPrime(a)
+{
+       if a = 0 or 1
+           give FALSE
+       if a div 2 eq 0
+           give FLSE
+       for ( i = 3; i by i less or eq a; i eq i plus 1)
+           if a div i eq 0
+                give FALSE
+       give TRUE
+}
+
+f type INT as power() 
+{{
+     create(a) type int
+     read(a)
+     write IsPrime(a) type STRING
+     give 0
+}}
