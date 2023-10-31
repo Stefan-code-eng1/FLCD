@@ -6,7 +6,7 @@ f type BOOL as IsPrime(a)
            give FALSE
        if a div 2 eq 0
            give FALSE
-       for ( i eq 3; i by i less or eq a; i eq i plus 1)
+       for ( i eq 3; i times i less or eq a; i eq i plus 1)
            if a div i eq 0
                 give FALSE
        give TRUE
