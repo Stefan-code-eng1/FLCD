@@ -2,6 +2,7 @@ adapt
 basic
 f
 type
+MaxComp
 INT
 STRING
 BOOL

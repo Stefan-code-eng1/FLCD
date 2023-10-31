@@ -15,7 +15,7 @@ Lexic:
 	- separators: ( ) { } ; , 
 
 	- reserved words: adapt basic f type give create read give write INT STRING BOOL as times less plus 
-	minus div eq TRUE FALSE of for
+	minus div eq TRUE FALSE of for MaxComp
     
 
       b.identifiers
