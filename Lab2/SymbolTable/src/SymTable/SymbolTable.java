@@ -12,7 +12,7 @@ public class SymbolTable {
         hashTable = new HashTable(size);
     }
 
-    public String findByPos(Pair pos){
+    public String findByPos(Pair<Integer,Integer> pos){
         return hashTable.findByPos(pos);
     }
 
@@ -24,7 +24,7 @@ public class SymbolTable {
         return hashTable.getSize();
     }
 
-    public Pair findPositionOfTerm(String term){
+    public Pair<Integer, Integer> findPositionOfTerm(String term){
         return hashTable.findPositionOfTerm(term);
     }
 

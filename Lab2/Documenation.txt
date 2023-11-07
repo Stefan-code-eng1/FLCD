@@ -1,26 +1,38 @@
-
+https://github.com/Stefan-code-eng1/FLCD/tree/main/Lab2
 
 For my SymbolTable I chose to implement one HashTable which can be used for both the identifiers
 table and constants table, as well as one single table which contains both of them.
-The approach for my hashtable is o have lists in lists, so basically, on each position from the list I have
-another list.
+The hastable uses lists of lists.
 
-getSize() method returns the size of the hashtable
+HashTable Operations: 
 
-findPositionOfTerm(String term) method returns the position of the term, which is computed the
-following way: we compute the hash for that term, we check whether the list from that is not empty, if
-it is empty we return null, otherwise we take the list from that position, parse it and when we reach our
-terminal, we create a Pair with the hash and terminal’s index from the list.
+	- getSize() returns the size of the hashtable
 
-findByPos(Pair pos) method will return the terminal from the symbol table based on its position
+	- findPositionOfTerm(String term) method returns the position of the term, which is computed the
+	following way: we compute the hash for that term, we check whether the list from that is not empty, if
+	it is empty we return null, otherwise we take the list from that position, parse it and when we reach our
+	terminal, we create a Pair with the hash and terminal’s index from the list.
 
-hash(String key) – represents my hash function and the approach used is to compute the sum of the
-characters and do modulo size.
+	- findByPos(Pair pos) method will return the terminal from the hah table based on its position
 
-containsTerm(String term) – returns true or false, depending if the element belongs to the symbol table
-or not
+	- hash(String key) –  compute the sum of the characters and do modulo size.
 
-add(String term) – adds an element to the symbol table
+	- containsTerm(String term) – returns true or false, depending if the element belongs to the hash	
+	table or not
 
-All those methods, expect the hash method are implemented in the SymbolTable class.
-I have also defined the Pair as a data structure. It is composed of 2 integer numbers.
+	- add(String term) – adds an element to the hash table
+
+SymbolTable Operations:
+
+	- findByPos(Pair<Integer,Integer>) : returns the element from the given positions
+
+	- getHashTable(): returns the symbol table
+
+	- getSize(): returns the size of the symbol table
+
+	- findPositionOfTerm(String term): returns the positions of a given symbol(if there is one)
+
+	- containsTerm(String term): check if the symbol exists in the symbol table
+
+	- add(String term): add an element to the symbol table
+
