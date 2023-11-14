@@ -1,50 +1,20 @@
 Alphabet:
-
-a. Upper (A-Z) and lower case letters (a-z) of the English alphabet
-
-b. Underline character '_';
-
-c. Decimal digits (0-9);
-
+	- Upper (A-Z) and lower case letters (a-z) of the English alphabet
+	- Underline character '_'
+	- Decimal digits
 Lexic:
-
-      a.Special symbols, representing:
-
-	- operators: 
-
-	- separators: ( ) { } ; , 
-
-	- reserved words: adapt basic f type give create read give write INT STRING BOOL as times less plus 
-	minus div eq TRUE FALSE of for MaxComp
-    
-
-      b.identifiers
-
-  	-a sequence of letters and  digits, such that the first character is a letter; the rule is:
-
-    		identifier = letter | letter{letter}{digit}
-
-    		letter = [A-Z] | [a-z]
-
-    		digit = [0-9]
-
-
-      c.constants
-
-	1.integer - rule:
-
-      		noconst = "plus"no|"minus"no|no
-
-      		no = digit{no}
-
-	2.character
-
-    		character = 'letter'|'digit'
-
-	3.string
-
-      		constchar = "string"
-
-      		string = char{string}
-
-      		char = letter|digit
+	- special symbols: 
+		- operators: + - * / < <= = >= == <>
+		- separators: [ ] { } , ; : space newline " '
+		- reserved words: prog int str char read if else print do while arr const fun 
+	- identifiers: a sequence of letters and digits, such that the first character is 
+	a letter with the rule being: 
+		identifier = ("_" | letter){letter|digit|"_"}
+		letter = "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+		digit = "0" | "1" | "2" | ... | "9"
+	- constants:
+		intconst = "0" | ["+"|"-"]nz_digit{digit}
+		nz_digit = "1" | "2" | ... | "9"
+		strconst = """{letter|digit|"_"|" "}"""
+		charconst = "'"(letter|digit|special_char)"'"
+		special_char = "+" | "-" | "*" | "<" | ">" | ...

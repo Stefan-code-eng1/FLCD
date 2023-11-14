@@ -1,44 +1,19 @@
-program ::= "#adapt *bascic*" decllist cmpdstmt 
-
-type ::= type1 | arraydecl
-
-type1 ::= "INT" | "STRING" | "BOOL" 
-
-arraydecl ::= "create" IDENTIFIER "type" type1 "with" nnumber
-
-decllist ::= declaration | declaration decllist
-
-declaration ::= "create" IDENTIFIER "type" type1
-
-nnumber = [1-9]+
-
-cmpdstmt ::= "BEGIN" stmtlist "END"
-
-stmtlist ::= stmt | stmt stmtlist
-
+The words - predefined tokens are specified between " and ":
+program ::= "prog {" stmtlist "}"
+declaration ::= IDENTIFIER "(" type ")" [","] {declaration}
+type1 ::= "char" | "int" | "str"
+arraydecl ::= "arr" "(" type1 "[" INTCONST "]" ")"
+type  ::= type1|arraydecl
+stmtlist ::= stmt | stmt ";" stmtlist
 stmt ::= simplstmt | structstmt
-
-simplstmt ::= assignstmt | iostmt
-
+simplstmt ::= assignstmt | iostmt | declaration
 assignstmt ::= IDENTIFIER "=" expression
-
-expression ::= expression mop term | term
-
-term ::= term dor factor | factor
-
-factor ::= "(" expression ")" | IDENTIFIER
-
-iostmt ::= "read" | "write" "(" IDENTIFIER ")"
-
-structstmt ::= cmpdstmt | ifstmt | whilestmt
-
-ifstmt ::= "if" condition "give" stmt ["else give" stmt]
-
-whilestmt ::= "while" condition "do" stmt
-
+expression ::= expression "+" term | expression "-" term | term
+term ::= term "*" factor | term "/" factor | factor
+factor ::= "(" expression ")" | IDENTIFIER | CONST
+iostmt ::= "read" "(" IDENTIFIER ")" | "print" "(" IDENTIFIER ")" | "print" "(" CONST ")" 
+structstmt ::= stmtlist | ifstmt | whilestmt
+ifstmt ::= "if" condition "{" stmtlist "}" ["else" "{" stmtlist "}"]
+whilestmt ::= "while" condition "{" stmtlist "}"
 condition ::= expression RELATION expression
-
-RELATION ::= "less" | "less or eq" | "eq" | "diff" | "more" | "more or eq"
-
-mop = "minus" | "plus"
-dor = "div" | "res"
+RELATION ::= "<" | "<=" | "==" | "<>" | ">=" | ">"

@@ -1,13 +1,12 @@
-#adapt *basic*
-
-f type INT as MaxNr(a,b,c){
-    give MaxComp(a,MaxComp(b,c))
+a (int), b (int), c (int);
+read(a);
+read(b);
+read(c);
+smallest (int) = a;
+if smallest > b {
+	smallest = b;
 }
-
-f type INT as power() 
-{{
-     create(a,b,c) type INT
-     read(a,b,c)
-     write MaxNr(a,b,c) type STRING
-     give 0
-}}
+if smallest > c {
+	smallest = c;
+}
+print(smallest);
