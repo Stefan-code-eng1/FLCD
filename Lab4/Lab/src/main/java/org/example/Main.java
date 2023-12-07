@@ -12,8 +12,9 @@ public class Main {
         System.out.println("0. Exit");
         while (true) {
             System.out.println("> ");
-            var option = new java.util.Scanner(System.in).nextInt();
-            switch (option) {
+            var option = new java.util.Scanner(System.in);
+            var input = option.nextInt();
+            switch (input) {
                 case 1:
                     fa.printStates();
                     break;
@@ -34,7 +35,7 @@ public class Main {
                     System.out.println(fa.checkAccepted(word));
                     break;
                 case 0:
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid option");
             }
