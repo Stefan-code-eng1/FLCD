@@ -209,7 +209,6 @@ class ParserOutput:
         self.tree_root = tree_root
 
     def transform_tree_representation(self):
-        # This is a simple example; you may need to customize based on your needs
         transformed_representation = self.__transform_tree(self.tree_root)
         return transformed_representation
 
@@ -225,7 +224,6 @@ class ParserOutput:
         return transformed_node
 
     def print_to_screen(self):
-        # This is a simple example; you may need to customize based on your needs
         self.__print_tree(self.tree_root)
 
     def __print_tree(self, node, depth=0):
@@ -235,7 +233,6 @@ class ParserOutput:
                 self.__print_tree(child, depth + 1)
 
     def print_to_file(self, file_name):
-        # This is a simple example; you may need to customize based on your needs
         with open(file_name, "w") as file:
             self.__write_tree_to_file(file, self.tree_root)
 
@@ -255,7 +252,7 @@ if __name__ == '__main__':
     for key, value in ll1_table.items():
         print(f"{key}: {value}")
 
-    # Perform parsing and create a parse tree (this is just a simple example, you may need to customize)
+    # Perform parsing and create a parse tree
     parse_tree_root = ParseTreeNode("S", [
         ParseTreeNode("a", []),
         ParseTreeNode("A", [
